@@ -1,25 +1,43 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
         <title>Rock, Paper, Scissors!</title>
-        <meta name="decription" content="Simple rock, paper, scissors game.">
-        <meta name="author" content="vinhb">
+        <meta name='decription' content='Simple rock, paper, scissors game.'>
+        <meta name='author' content='vinhb'>
   
         <!--oper graph meta elements for social cards-->
-        <!-- <meta property="og:title" content="A Basic HTML5 Template">
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="https://www.sitepoint.com/a-basic-html5-template/">
-        <meta property="og:description" content="A simple HTML5 Template for new projects.">
-        <meta property="og:image" content="image.png"> -->
+        <!-- <meta property='og:title' content='A Basic HTML5 Template'>
+        <meta property='og:type' content='website'>
+        <meta property='og:url' content='https://www.sitepoint.com/a-basic-html5-template/'>
+        <meta property='og:description' content='A simple HTML5 Template for new projects.'>
+        <meta property='og:image' content='image.png'> -->
 
-        <link rel="stylesheet" href="main.css">
+        <link rel='stylesheet' href='main.css'>
 
     </head>
     <body>
+        <div id='container'>
+            <div id='choices'>
+                <button id='rock' class='choice'>Rock</button>
+                <button id='paper' class='choice'>Paper</button>
+                <button id='scissors' class='choice'>Scissors</button>
+            </div>
 
-        <script src="rock-paper-scissors.js"></script>
+            <div class='scores'>
+                <div class='score'>
+                    <span>Player:</span>
+                    <span id='player-score'>0</span>
+                </div>
+                <div class='score'>
+                    <span>Computer:</span>
+                    <span id='computer-score'>0</span>
+                </div>
+            </div>
+        </div>
+
+        <script src='rock-paper-scissors.js'></script>
     </body>
     <footer>
 

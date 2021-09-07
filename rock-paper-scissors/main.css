@@ -1,0 +1,13 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+div {
+    margin: 20px;
+}
+
+#container {
+    display: inline-block; 
+}
+

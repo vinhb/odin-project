@@ -77,32 +77,69 @@ function playRound(playerSelect, computerSelection) {
 
 };
 
-function game() {
+// function game() {
+//     let compScore = 0;
+//     let userScore = 0;
+//     let result;
+//     for (let i = 0; i < 5; i++) {
+//         result = playRound(prompt('Rock, paper, or scissors?'), computerPlay());
+//         if (result == 2) {
+//             compScore++;
+//         }
+
+//         else if (result == 1) {
+//             userScore++;
+//         }
+//     }
+
+//     if (compScore > userScore) {
+//         console.log(`You lost. The computer scored ${compScore}. You scored ${userScore}.`)
+//     }
+
+//     else if (compScore < userScore) {
+//         console.log(`You won! The computer scored ${compScore}. You scored ${userScore}.`)
+//     }
+
+//     else {
+//         console.log(`It's a tie! The computer scored ${compScore}. You scored ${userScore}.`)
+//     }
+// }
+
+// game();
+
     let compScore = 0;
     let userScore = 0;
-    let result;
-    for (let i = 0; i < 5; i++) {
-        result = playRound(prompt('Rock, paper, or scissors?'), computerPlay());
-        if (result == 2) {
-            compScore++;
-        }
 
-        else if (result == 1) {
-            userScore++;
-        }
+function roundPlayed() {
+    let result = playRound(this.innerText.toLowerCase(),computerPlay()); // `this` references the button clicked by user
+    
+    if (result == 2) {
+        compScore++;
+        document.querySelector('#computer-score').innerText = compScore;
     }
 
-    if (compScore > userScore) {
-        console.log(`You lost. The computer scored ${compScore}. You scored ${userScore}.`)
+    if (result == 1) {
+        userScore++;
+        document.querySelector('#player-score').innerText = userScore;
     }
 
-    else if (compScore < userScore) {
-        console.log(`You won! The computer scored ${compScore}. You scored ${userScore}.`)
+    if (compScore == 5 || userScore == 5) {
+        let scoreCont = document.getElementsByClassName('scores')[0];
+        const div = document.createElement('div');
+        const p = document.createElement('span');
+
+        p.innerText = compScore > userScore ? 'Computer wins!':'Player wins!'
+        div.append(p);
+        scoreCont.append(div);
     }
 
-    else {
-        console.log(`It's a tie! The computer scored ${compScore}. You scored ${userScore}.`)
-    }
+
 }
 
-game();
+const choices = Array.from(document.querySelectorAll('.choice'));
+choices.forEach(choice => 
+    choice.addEventListener('click', roundPlayed));
+
+    // create roundPlayed function
+    // 
+
